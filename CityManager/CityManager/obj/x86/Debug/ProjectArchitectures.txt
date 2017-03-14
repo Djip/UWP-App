@@ -1,0 +1,1 @@
+C:\Users\jespe\Documents\GitHub\UWP-App\CityManager\CityManager\CityManager.csproj;x86
