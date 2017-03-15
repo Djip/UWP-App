@@ -1,14 +1,20 @@
 ﻿<Page
-    x:Class="CityManager.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:CityManager"
+    xmlns:data="using:CityManager.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Models="using:CityManager.Models"
+    xmlns:Viewmodel="using:CityManager.Viewmodel"
+    x:Class="CityManager.MainPage"
     mc:Ignorable="d">
+    <Page.DataContext>
+        <Viewmodel:ViewModel/>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <GridView>
+        <GridView ItemsSource="{Binding Arduinos}">
             <GridView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <ItemsWrapGrid Orientation="Horizontal" />
@@ -16,40 +22,52 @@
             </GridView.ItemsPanel>
             <GridView.ItemContainerStyle>
                 <Style TargetType="GridViewItem">
-                    <Style.Setters>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate>
-                                    <Grid Background="Gray" Margin="5" Height="166" Width="166">
-                                        <ContentPresenter />
-                                    </Grid>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style.Setters>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <Grid Background="Gray" Margin="5" Height="166" Width="166">
+                                    <ContentPresenter />
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
                 </Style>
             </GridView.ItemContainerStyle>
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="data:Arduino">
+                    <GridViewItem>
+                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}">
+                    
+                        </TextBlock>
+                    </GridViewItem>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <!--
+
+            <GridView.DataContext>
+                <Models:ObservableCollection/>
+            </GridView.DataContext>
 
             <GridViewItem>
                 <TextBlock TextAlignment="Center" VerticalAlignment="Center">
-                    FUCKA UU
+                    <Run Text="FUCKA UU"/>
                 </TextBlock>
             </GridViewItem>
             <GridViewItem>
                 <TextBlock TextAlignment="Center" VerticalAlignment="Center">
-                    FUCKA UU1
+                    <Run Text="FUCKA UU1"/>
                 </TextBlock>
             </GridViewItem>
             <GridViewItem>
                 <TextBlock TextAlignment="Center" VerticalAlignment="Center">
-                    FUCKA UU
+                    <Run Text="FUCKA UU"/>
                 </TextBlock>
             </GridViewItem>
             <GridViewItem>
                 <TextBlock TextAlignment="Center" VerticalAlignment="Center">
-                    FUCKA UU
+                    <Run Text="FUCKA UU"/>
                 </TextBlock>
-            </GridViewItem>
+            </GridViewItem>-->
         </GridView>
     </Grid>
 </Page>

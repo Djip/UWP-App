@@ -1,6 +1,8 @@
 ﻿using CityManager.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -25,15 +27,18 @@ namespace CityManager
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
 
-            deserialize();
+          //  deserialize();
         }
+
 
         public void deserialize()
         {
+            
             string xml = "<ArduinoCollection><Arduinos><Arduino><name>Tog</name><ip>192.168.40.3</ip><core><ArduinoMethod><name>driveForward</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>driveBackwards</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>stopTrain</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>1</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod></core><group></group></Arduino><Arduino><name>Bil</name><ip>192.168.40.4</ip><core><ArduinoMethod><name>driveForward</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>driveBackwards</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>stopTrain</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>1</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod></core><group></group></Arduino><Arduino><name>Lyskryds</name><ip>192.168.40.4</ip><core><ArduinoMethod><name>turnOnLights</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>turnOffLights</name><default>1</default><minimum>0</minimum><maximum>1</maximum><current>1</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>emergencyLights</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod></core><group><ArduinoMethod><name>turnOnlight</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName>lyskryds</unitName><unitCount>4</unitCount></ArduinoMethod><ArduinoMethod><name>turnOfflight</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName>lyskryds</unitName><unitCount>4</unitCount></ArduinoMethod></group></Arduino></Arduinos></ArduinoCollection>";
             //string xml = "<ArduinoCollection><Arduinos><Arduino><name>Tog</name><ip>192.168.40.3</ip></Arduino><Arduino><name>Bil</name><ip>192.168.40.4</ip></Arduino><Arduino><name>Lyskryds</name><ip>192.168.40.4</ip></Arduino></Arduinos></ArduinoCollection>";
 
@@ -43,14 +48,14 @@ namespace CityManager
             {
                 try
                 {
-                    ArduinoCollection test = (ArduinoCollection)serializer.Deserialize(stringReader);
-                    Debug.WriteLine(test.Arduinos.Length);
+                    ArduinoCollection arduinoCollection = (ArduinoCollection)serializer.Deserialize(stringReader);
+                    Debug.WriteLine(arduinoCollection.Arduinos.Length);
                 }
                 catch (Exception e)
                 {
                     Debug.WriteLine(e.StackTrace);
                 }
-
+                
             }
         }
     }
