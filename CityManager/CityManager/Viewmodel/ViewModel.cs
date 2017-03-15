@@ -6,56 +6,67 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Serialization;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
-
-namespace CityManager
+namespace CityManager.Viewmodel
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class MainPage : Page
+    public class ViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        private ObservableCollection<Arduino> arduinos = new ObservableCollection<Arduino>();
 
-        public MainPage()
+        public ObservableCollection<Arduino> Arduinos
         {
-            this.InitializeComponent();
+            get
+            {
+                return arduinos;
+            }
 
-          //  deserialize();
+            set
+            {
+                arduinos = value;
+                OnPropertyChanged("Arduinos");
+            }
         }
 
 
-        public void deserialize()
-        {
-            
+
+        public ViewModel() {
+
             string xml = "<ArduinoCollection><Arduinos><Arduino><name>Tog</name><ip>192.168.40.3</ip><core><ArduinoMethod><name>driveForward</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>driveBackwards</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>stopTrain</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>1</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod></core><group></group></Arduino><Arduino><name>Bil</name><ip>192.168.40.4</ip><core><ArduinoMethod><name>driveForward</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>driveBackwards</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>stopTrain</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>1</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod></core><group></group></Arduino><Arduino><name>Lyskryds</name><ip>192.168.40.4</ip><core><ArduinoMethod><name>turnOnLights</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>turnOffLights</name><default>1</default><minimum>0</minimum><maximum>1</maximum><current>1</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>emergencyLights</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod></core><group><ArduinoMethod><name>turnOnlight</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName>lyskryds</unitName><unitCount>4</unitCount></ArduinoMethod><ArduinoMethod><name>turnOfflight</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName>lyskryds</unitName><unitCount>4</unitCount></ArduinoMethod></group></Arduino></Arduinos></ArduinoCollection>";
             //string xml = "<ArduinoCollection><Arduinos><Arduino><name>Tog</name><ip>192.168.40.3</ip></Arduino><Arduino><name>Bil</name><ip>192.168.40.4</ip></Arduino><Arduino><name>Lyskryds</name><ip>192.168.40.4</ip></Arduino></Arduinos></ArduinoCollection>";
 
             XmlSerializer serializer = new XmlSerializer(typeof(ArduinoCollection));
-
+            ArduinoCollection arduinoCollection = null;
             using (StringReader stringReader = new StringReader(xml))
             {
                 try
                 {
-                    ArduinoCollection arduinoCollection = (ArduinoCollection)serializer.Deserialize(stringReader);
-                    Debug.WriteLine(arduinoCollection.Arduinos.Length);
+                     arduinoCollection = (ArduinoCollection)serializer.Deserialize(stringReader);
+                
                 }
                 catch (Exception e)
                 {
                     Debug.WriteLine(e.StackTrace);
                 }
-                
+
+            }
+
+            foreach (var item in arduinoCollection.Arduinos)
+            {
+                Arduinos.Add(item);
+            }
+
+
+        }
+        private void OnPropertyChanged(string v)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(v));
             }
         }
     }

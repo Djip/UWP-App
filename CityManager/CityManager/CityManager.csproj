@@ -101,8 +101,8 @@
     <Compile Include="Models\Arduino.cs" />
     <Compile Include="Models\ArduinoCollection.cs" />
     <Compile Include="Models\ArduinoMethod.cs" />
-    <Compile Include="Models\ObservableCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Viewmodel\ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

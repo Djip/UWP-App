@@ -15,20 +15,7 @@ namespace CityManager.Models
         [XmlArrayItem("Arduino", typeof(Arduino))]
         public Arduino[] Arduinos { get; set; }
 
-        public static ArduinoCollection Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new ArduinoCollection();
-                }
-                return instance;
-            }
-        }
-
-        private static ArduinoCollection instance;
-        private ArduinoCollection() { }
+        public ArduinoCollection() { }
         
     }
 }

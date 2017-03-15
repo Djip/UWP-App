@@ -34,7 +34,7 @@
                 </Style>
             </GridView.ItemContainerStyle>
             <GridView.ItemTemplate>
-                <DataTemplate x:DataType="data:Arduino">
+                <DataTemplate                          >
                     <GridViewItem>
                         <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}">
                     
@@ -71,3 +71,4 @@
         </GridView>
     </Grid>
 </Page>
+
