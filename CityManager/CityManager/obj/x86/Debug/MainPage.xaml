@@ -14,7 +14,7 @@
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <GridView ItemsSource="{Binding Arduinos}">
+        <GridView ItemsSource="{Binding Arduinos}" IsItemClickEnabled="True" SelectionMode="None">
             <GridView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <ItemsWrapGrid Orientation="Horizontal" />
@@ -35,10 +35,8 @@
             </GridView.ItemContainerStyle>
             <GridView.ItemTemplate>
                 <DataTemplate                          >
-                    <GridViewItem>
-                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}">
-                    
-                        </TextBlock>
+                    <GridViewItem x:ConnectionId='1'                              Tag="{Binding Ip}">
+                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" Text="{Binding Name}" Name="GridText"/>
                     </GridViewItem>
                 </DataTemplate>
             </GridView.ItemTemplate>
