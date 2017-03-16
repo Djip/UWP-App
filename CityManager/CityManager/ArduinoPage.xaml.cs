@@ -28,11 +28,11 @@ namespace CityManager
             //we use the arduinos ip as a uniqe id
             //we then send that id over to this page so we know what arduino we are working with
             arduinoTag = e.Parameter.ToString();
-            generatePage();
+            GeneratePage();
         }
 
         //generates the page based on the XML vars we have
-        private void generatePage()
+        private void GeneratePage()
         {
             ViewModel vm = new ViewModel();
             ObservableCollection<Arduino> oc = vm.Arduinos;
@@ -46,14 +46,14 @@ namespace CityManager
 
                     if (a != null)
                     {
-                        generateNameTextbox(a); 
+                        GenerateNameTextbox(a); 
                     }
                 }
             }
         }
 
         //genarates a textblock contaning the arduinos name
-        private void generateNameTextbox(Arduino a)
+        private void GenerateNameTextbox(Arduino a)
         {
             TextBlock t = new TextBlock();
             t.Text = a.Name;
@@ -66,10 +66,10 @@ namespace CityManager
             //add the textblock to our page
             //we use a predefined stack panel as our base page
             StackBase.Children.Add(t);
-            generateMethodControls();
+            GenerateMethodControls();
         }
 
-        private TextBlock generateMethodLabel(string text)
+        private TextBlock GenerateMethodLabel(string text)
         {
             TextBlock t = new TextBlock();
             t.Text = text;
@@ -78,13 +78,13 @@ namespace CityManager
         }
 
         //adds whatever controls the arduino has
-        private void generateMethodControls()
+        private void GenerateMethodControls()
         {
             //generate core controls
             foreach (ArduinoMethod am in currentArduino.CoreMethods)
             {
-                StackBase.Children.Add(generateMethodLabel(am.Name));
-                StackBase.Children.Add(findControlType(am.MinValue, am.MaxValue));
+                StackBase.Children.Add(GenerateMethodLabel(am.Name));
+                StackBase.Children.Add(FindControlType(am.MinValue, am.MaxValue));
             }
 
             //add a new label so we can see what controls are core and groups
@@ -93,19 +93,19 @@ namespace CityManager
             //generate group controls
             foreach (ArduinoMethod am in currentArduino.GroupMethods)
             {
-                StackBase.Children.Add(generateMethodLabel(am.Name));
+                StackBase.Children.Add(GenerateMethodLabel(am.Name));
 
                 for (int i = 0; i < am.UnitCount; i++)
                 {
                     //there are no uniqe names for units in groups so we just call them unit + number
                     StackBase.Children.Add(new TextBlock() {Text = "Unit " + i });
-                    StackBase.Children.Add(findControlType(am.MinValue, am.MaxValue));
+                    StackBase.Children.Add(FindControlType(am.MinValue, am.MaxValue));
                 }
             }
         }
 
         //returns the appropriate control for the values given by the xml
-        private Control findControlType(int min, int max)
+        private Control FindControlType(int min, int max)
         {
             if (min == 0 && max == 1)
             {
