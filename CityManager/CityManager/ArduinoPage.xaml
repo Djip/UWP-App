@@ -7,7 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel RequestedTheme="Default" Name="StackBase">
+        <Button x:Name="button" Content="Back" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Tapped="button_Tapped" Height="60" FontSize="36"/>
 
-    </Grid>
+    </StackPanel>
 </Page>

@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-15T12:36:47.093</Modified>
+      <Modified>2017-03-16T10:27:35.051</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\CityManager.exe">
       <PackagePath>entrypoint\CityManager.exe</PackagePath>
-      <Modified>2017-03-15T12:36:46.505</Modified>
+      <Modified>2017-03-16T10:27:34.582</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mthy\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -532,7 +532,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\CityManager.xr.xml">
       <PackagePath>CityManager.xr.xml</PackagePath>
-      <Modified>2017-03-15T12:01:14.879</Modified>
+      <Modified>2017-03-16T10:22:59.845</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -541,11 +541,11 @@
     <AppxPackagedFile Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-15T12:14:31.279</Modified>
+      <Modified>2017-03-16T10:23:00.631</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\Core\CityManager.exe">
       <PackagePath>CityManager.exe</PackagePath>
-      <Modified>2017-03-15T12:36:47.084</Modified>
+      <Modified>2017-03-16T10:27:35.043</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
