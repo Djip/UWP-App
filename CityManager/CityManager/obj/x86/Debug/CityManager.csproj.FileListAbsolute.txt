@@ -422,3 +422,8 @@ C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\qualifiers.txt
 C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\qualifiers.txt.intermediate
 C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\ProjectArchitectures.txt
+C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\ArduinoPage.xbf
+C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\ArduinoPage.g.i.cs
+C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\ArduinoPage.g.cs
+C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\ArduinoPage.xaml
+C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\ArduinoPage.xbf

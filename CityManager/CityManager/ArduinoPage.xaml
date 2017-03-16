@@ -1,0 +1,14 @@
+﻿<Page
+    x:Class="CityManager.ArduinoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CityManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel RequestedTheme="Default" Name="StackBase">
+        <Button x:Name="button" Content="Back" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Tapped="button_Tapped" Height="60" FontSize="36"/>
+
+    </StackPanel>
+</Page>
