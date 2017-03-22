@@ -10,11 +10,12 @@
       <RootProperty Name="RequestedTheme" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
-      <RootProperty Name="Content" />
       <RootProperty Name="DataContext" />
+      <RootProperty Name="Content" />
+      <RootEvent Name="Unloaded" />
     </RootType>
+    <RootType FullName="CityManager.Viewmodel.ViewModelArduino" />
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Name" />
       <RootProperty Name="RequestedTheme" />
       <RootProperty Name="Children" />
     </RootType>
@@ -43,6 +44,7 @@
       <RootProperty Name="ItemsPanel" />
       <RootProperty Name="ItemContainerStyle" />
       <RootProperty Name="ItemTemplate" />
+      <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
