@@ -26,6 +26,8 @@ namespace CityManager.Models
             webSock.Closed += WebSock_Closed;
             Uri serverUri = new Uri("ws://echo.websocket.org");
 
+
+            /// Denne del er kun til test
             try
             {
                 //Connect to the server.
@@ -38,6 +40,7 @@ namespace CityManager.Models
             {
                 Debug.WriteLine("server: " + ex);
             }
+            /// her til
         }
         //The MessageReceived event handler.
         public void WebSock_MessageReceived(MessageWebSocket sender, MessageWebSocketMessageReceivedEventArgs args)
