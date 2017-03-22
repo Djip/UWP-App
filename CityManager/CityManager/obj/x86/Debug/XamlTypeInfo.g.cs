@@ -135,37 +135,37 @@ namespace CityManager.CityManager_XamlTypeInfo
             _typeNameTable = new string[16];
             _typeNameTable[0] = "CityManager.Viewmodel.ViewModelArduino";
             _typeNameTable[1] = "Object";
-            _typeNameTable[2] = "CityManager.Models.Arduino";
-            _typeNameTable[3] = "CityManager.ArduinoPage";
-            _typeNameTable[4] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[5] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[6] = "CityManager.Viewmodel.ViewModel";
-            _typeNameTable[7] = "System.Collections.ObjectModel.ObservableCollection`1<CityManager.Models.Arduino>";
-            _typeNameTable[8] = "System.Collections.ObjectModel.Collection`1<CityManager.Models.Arduino>";
-            _typeNameTable[9] = "String";
-            _typeNameTable[10] = "CityManager.Models.ArduinoMethod[]";
-            _typeNameTable[11] = "System.Array";
-            _typeNameTable[12] = "CityManager.Models.ArduinoMethod";
-            _typeNameTable[13] = "Int32";
-            _typeNameTable[14] = "System.Windows.Input.ICommand";
+            _typeNameTable[2] = "System.Windows.Input.ICommand";
+            _typeNameTable[3] = "CityManager.Models.Arduino";
+            _typeNameTable[4] = "CityManager.ArduinoPage";
+            _typeNameTable[5] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[6] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[7] = "CityManager.Viewmodel.ViewModel";
+            _typeNameTable[8] = "System.Collections.ObjectModel.ObservableCollection`1<CityManager.Models.Arduino>";
+            _typeNameTable[9] = "System.Collections.ObjectModel.Collection`1<CityManager.Models.Arduino>";
+            _typeNameTable[10] = "String";
+            _typeNameTable[11] = "CityManager.Models.ArduinoMethod[]";
+            _typeNameTable[12] = "System.Array";
+            _typeNameTable[13] = "CityManager.Models.ArduinoMethod";
+            _typeNameTable[14] = "Int32";
             _typeNameTable[15] = "CityManager.MainPage";
 
             _typeTable = new global::System.Type[16];
             _typeTable[0] = typeof(global::CityManager.Viewmodel.ViewModelArduino);
             _typeTable[1] = typeof(global::System.Object);
-            _typeTable[2] = typeof(global::CityManager.Models.Arduino);
-            _typeTable[3] = typeof(global::CityManager.ArduinoPage);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[6] = typeof(global::CityManager.Viewmodel.ViewModel);
-            _typeTable[7] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CityManager.Models.Arduino>);
-            _typeTable[8] = typeof(global::System.Collections.ObjectModel.Collection<global::CityManager.Models.Arduino>);
-            _typeTable[9] = typeof(global::System.String);
-            _typeTable[10] = typeof(global::CityManager.Models.ArduinoMethod[]);
-            _typeTable[11] = typeof(global::System.Array);
-            _typeTable[12] = typeof(global::CityManager.Models.ArduinoMethod);
-            _typeTable[13] = typeof(global::System.Int32);
-            _typeTable[14] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[2] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[3] = typeof(global::CityManager.Models.Arduino);
+            _typeTable[4] = typeof(global::CityManager.ArduinoPage);
+            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[7] = typeof(global::CityManager.Viewmodel.ViewModel);
+            _typeTable[8] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CityManager.Models.Arduino>);
+            _typeTable[9] = typeof(global::System.Collections.ObjectModel.Collection<global::CityManager.Models.Arduino>);
+            _typeTable[10] = typeof(global::System.String);
+            _typeTable[11] = typeof(global::CityManager.Models.ArduinoMethod[]);
+            _typeTable[12] = typeof(global::System.Array);
+            _typeTable[13] = typeof(global::CityManager.Models.ArduinoMethod);
+            _typeTable[14] = typeof(global::System.Int32);
             _typeTable[15] = typeof(global::CityManager.MainPage);
         }
 
@@ -202,20 +202,20 @@ namespace CityManager.CityManager_XamlTypeInfo
         }
 
         private object Activate_0_ViewModelArduino() { return new global::CityManager.Viewmodel.ViewModelArduino(); }
-        private object Activate_2_Arduino() { return new global::CityManager.Models.Arduino(); }
-        private object Activate_3_ArduinoPage() { return new global::CityManager.ArduinoPage(); }
-        private object Activate_6_ViewModel() { return new global::CityManager.Viewmodel.ViewModel(); }
-        private object Activate_7_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::CityManager.Models.Arduino>(); }
-        private object Activate_8_Collection() { return new global::System.Collections.ObjectModel.Collection<global::CityManager.Models.Arduino>(); }
-        private object Activate_12_ArduinoMethod() { return new global::CityManager.Models.ArduinoMethod(); }
+        private object Activate_3_Arduino() { return new global::CityManager.Models.Arduino(); }
+        private object Activate_4_ArduinoPage() { return new global::CityManager.ArduinoPage(); }
+        private object Activate_7_ViewModel() { return new global::CityManager.Viewmodel.ViewModel(); }
+        private object Activate_8_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::CityManager.Models.Arduino>(); }
+        private object Activate_9_Collection() { return new global::System.Collections.ObjectModel.Collection<global::CityManager.Models.Arduino>(); }
+        private object Activate_13_ArduinoMethod() { return new global::CityManager.Models.ArduinoMethod(); }
         private object Activate_15_MainPage() { return new global::CityManager.MainPage(); }
-        private void VectorAdd_7_ObservableCollection(object instance, object item)
+        private void VectorAdd_8_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::CityManager.Models.Arduino>)instance;
             var newItem = (global::CityManager.Models.Arduino)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_8_Collection(object instance, object item)
+        private void VectorAdd_9_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::CityManager.Models.Arduino>)instance;
             var newItem = (global::CityManager.Models.Arduino)item;
@@ -235,6 +235,7 @@ namespace CityManager.CityManager_XamlTypeInfo
             case 0:   //  CityManager.Viewmodel.ViewModelArduino
                 userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_0_ViewModelArduino;
+                userType.AddMemberName("OnValueChanged");
                 userType.AddMemberName("Unit");
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -244,9 +245,15 @@ namespace CityManager.CityManager_XamlTypeInfo
                 xamlType = new global::CityManager.CityManager_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  CityManager.Models.Arduino
+            case 2:   //  System.Windows.Input.ICommand
+                userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 3:   //  CityManager.Models.Arduino
                 userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_2_Arduino;
+                userType.Activator = Activate_3_Arduino;
                 userType.AddMemberName("Name");
                 userType.AddMemberName("Ip");
                 userType.AddMemberName("CoreMethods");
@@ -255,63 +262,63 @@ namespace CityManager.CityManager_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 3:   //  CityManager.ArduinoPage
+            case 4:   //  CityManager.ArduinoPage
                 userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_ArduinoPage;
+                userType.Activator = Activate_4_ArduinoPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  Windows.UI.Xaml.Controls.Page
+            case 5:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::CityManager.CityManager_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  Windows.UI.Xaml.Controls.UserControl
+            case 6:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::CityManager.CityManager_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  CityManager.Viewmodel.ViewModel
+            case 7:   //  CityManager.Viewmodel.ViewModel
                 userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_6_ViewModel;
+                userType.Activator = Activate_7_ViewModel;
                 userType.AddMemberName("Arduinos");
                 userType.AddMemberName("OnGridClickCommand");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  System.Collections.ObjectModel.ObservableCollection`1<CityManager.Models.Arduino>
+            case 8:   //  System.Collections.ObjectModel.ObservableCollection`1<CityManager.Models.Arduino>
                 userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<CityManager.Models.Arduino>"));
-                userType.CollectionAdd = VectorAdd_7_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_8_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 8:   //  System.Collections.ObjectModel.Collection`1<CityManager.Models.Arduino>
+            case 9:   //  System.Collections.ObjectModel.Collection`1<CityManager.Models.Arduino>
                 userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_8_Collection;
-                userType.CollectionAdd = VectorAdd_8_Collection;
+                userType.Activator = Activate_9_Collection;
+                userType.CollectionAdd = VectorAdd_9_Collection;
                 xamlType = userType;
                 break;
 
-            case 9:   //  String
+            case 10:   //  String
                 xamlType = new global::CityManager.CityManager_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  CityManager.Models.ArduinoMethod[]
+            case 11:   //  CityManager.Models.ArduinoMethod[]
                 userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Array"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  System.Array
+            case 12:   //  System.Array
                 userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 12:   //  CityManager.Models.ArduinoMethod
+            case 13:   //  CityManager.Models.ArduinoMethod
                 userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_12_ArduinoMethod;
+                userType.Activator = Activate_13_ArduinoMethod;
                 userType.AddMemberName("Name");
                 userType.AddMemberName("DefaultValue");
                 userType.AddMemberName("MinValue");
@@ -323,14 +330,8 @@ namespace CityManager.CityManager_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 13:   //  Int32
+            case 14:   //  Int32
                 xamlType = new global::CityManager.CityManager_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 14:   //  System.Windows.Input.ICommand
-                userType = new global::CityManager.CityManager_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
                 break;
 
             case 15:   //  CityManager.MainPage
@@ -344,142 +345,152 @@ namespace CityManager.CityManager_XamlTypeInfo
         }
 
 
-        private object get_0_ViewModelArduino_Unit(object instance)
+        private object get_0_ViewModelArduino_OnValueChanged(object instance)
+        {
+            var that = (global::CityManager.Viewmodel.ViewModelArduino)instance;
+            return that.OnValueChanged;
+        }
+        private void set_0_ViewModelArduino_OnValueChanged(object instance, object Value)
+        {
+            var that = (global::CityManager.Viewmodel.ViewModelArduino)instance;
+            that.OnValueChanged = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_1_ViewModelArduino_Unit(object instance)
         {
             var that = (global::CityManager.Viewmodel.ViewModelArduino)instance;
             return that.Unit;
         }
-        private void set_0_ViewModelArduino_Unit(object instance, object Value)
+        private void set_1_ViewModelArduino_Unit(object instance, object Value)
         {
             var that = (global::CityManager.Viewmodel.ViewModelArduino)instance;
             that.Unit = (global::CityManager.Models.Arduino)Value;
         }
-        private object get_1_ViewModel_Arduinos(object instance)
+        private object get_2_ViewModel_Arduinos(object instance)
         {
             var that = (global::CityManager.Viewmodel.ViewModel)instance;
             return that.Arduinos;
         }
-        private void set_1_ViewModel_Arduinos(object instance, object Value)
+        private void set_2_ViewModel_Arduinos(object instance, object Value)
         {
             var that = (global::CityManager.Viewmodel.ViewModel)instance;
             that.Arduinos = (global::System.Collections.ObjectModel.ObservableCollection<global::CityManager.Models.Arduino>)Value;
         }
-        private object get_2_Arduino_Name(object instance)
+        private object get_3_Arduino_Name(object instance)
         {
             var that = (global::CityManager.Models.Arduino)instance;
             return that.Name;
         }
-        private void set_2_Arduino_Name(object instance, object Value)
+        private void set_3_Arduino_Name(object instance, object Value)
         {
             var that = (global::CityManager.Models.Arduino)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_3_Arduino_Ip(object instance)
+        private object get_4_Arduino_Ip(object instance)
         {
             var that = (global::CityManager.Models.Arduino)instance;
             return that.Ip;
         }
-        private void set_3_Arduino_Ip(object instance, object Value)
+        private void set_4_Arduino_Ip(object instance, object Value)
         {
             var that = (global::CityManager.Models.Arduino)instance;
             that.Ip = (global::System.String)Value;
         }
-        private object get_4_Arduino_CoreMethods(object instance)
+        private object get_5_Arduino_CoreMethods(object instance)
         {
             var that = (global::CityManager.Models.Arduino)instance;
             return that.CoreMethods;
         }
-        private void set_4_Arduino_CoreMethods(object instance, object Value)
+        private void set_5_Arduino_CoreMethods(object instance, object Value)
         {
             var that = (global::CityManager.Models.Arduino)instance;
             that.CoreMethods = (global::CityManager.Models.ArduinoMethod[])Value;
         }
-        private object get_5_ArduinoMethod_Name(object instance)
+        private object get_6_ArduinoMethod_Name(object instance)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             return that.Name;
         }
-        private void set_5_ArduinoMethod_Name(object instance, object Value)
+        private void set_6_ArduinoMethod_Name(object instance, object Value)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_6_ArduinoMethod_DefaultValue(object instance)
+        private object get_7_ArduinoMethod_DefaultValue(object instance)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             return that.DefaultValue;
         }
-        private void set_6_ArduinoMethod_DefaultValue(object instance, object Value)
+        private void set_7_ArduinoMethod_DefaultValue(object instance, object Value)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             that.DefaultValue = (global::System.Int32)Value;
         }
-        private object get_7_ArduinoMethod_MinValue(object instance)
+        private object get_8_ArduinoMethod_MinValue(object instance)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             return that.MinValue;
         }
-        private void set_7_ArduinoMethod_MinValue(object instance, object Value)
+        private void set_8_ArduinoMethod_MinValue(object instance, object Value)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             that.MinValue = (global::System.Int32)Value;
         }
-        private object get_8_ArduinoMethod_MaxValue(object instance)
+        private object get_9_ArduinoMethod_MaxValue(object instance)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             return that.MaxValue;
         }
-        private void set_8_ArduinoMethod_MaxValue(object instance, object Value)
+        private void set_9_ArduinoMethod_MaxValue(object instance, object Value)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             that.MaxValue = (global::System.Int32)Value;
         }
-        private object get_9_ArduinoMethod_CurrentValue(object instance)
+        private object get_10_ArduinoMethod_CurrentValue(object instance)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             return that.CurrentValue;
         }
-        private void set_9_ArduinoMethod_CurrentValue(object instance, object Value)
+        private void set_10_ArduinoMethod_CurrentValue(object instance, object Value)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             that.CurrentValue = (global::System.Int32)Value;
         }
-        private object get_10_ArduinoMethod_UnitName(object instance)
+        private object get_11_ArduinoMethod_UnitName(object instance)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             return that.UnitName;
         }
-        private void set_10_ArduinoMethod_UnitName(object instance, object Value)
+        private void set_11_ArduinoMethod_UnitName(object instance, object Value)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             that.UnitName = (global::System.String)Value;
         }
-        private object get_11_ArduinoMethod_UnitCount(object instance)
+        private object get_12_ArduinoMethod_UnitCount(object instance)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             return that.UnitCount;
         }
-        private void set_11_ArduinoMethod_UnitCount(object instance, object Value)
+        private void set_12_ArduinoMethod_UnitCount(object instance, object Value)
         {
             var that = (global::CityManager.Models.ArduinoMethod)instance;
             that.UnitCount = (global::System.Int32)Value;
         }
-        private object get_12_Arduino_GroupMethods(object instance)
+        private object get_13_Arduino_GroupMethods(object instance)
         {
             var that = (global::CityManager.Models.Arduino)instance;
             return that.GroupMethods;
         }
-        private void set_12_Arduino_GroupMethods(object instance, object Value)
+        private void set_13_Arduino_GroupMethods(object instance, object Value)
         {
             var that = (global::CityManager.Models.Arduino)instance;
             that.GroupMethods = (global::CityManager.Models.ArduinoMethod[])Value;
         }
-        private object get_13_ViewModel_OnGridClickCommand(object instance)
+        private object get_14_ViewModel_OnGridClickCommand(object instance)
         {
             var that = (global::CityManager.Viewmodel.ViewModel)instance;
             return that.OnGridClickCommand;
         }
-        private void set_13_ViewModel_OnGridClickCommand(object instance, object Value)
+        private void set_14_ViewModel_OnGridClickCommand(object instance, object Value)
         {
             var that = (global::CityManager.Viewmodel.ViewModel)instance;
             that.OnGridClickCommand = (global::System.Windows.Input.ICommand)Value;
@@ -492,89 +503,95 @@ namespace CityManager.CityManager_XamlTypeInfo
 
             switch (longMemberName)
             {
+            case "CityManager.Viewmodel.ViewModelArduino.OnValueChanged":
+                userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Viewmodel.ViewModelArduino");
+                xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "OnValueChanged", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_0_ViewModelArduino_OnValueChanged;
+                xamlMember.Setter = set_0_ViewModelArduino_OnValueChanged;
+                break;
             case "CityManager.Viewmodel.ViewModelArduino.Unit":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Viewmodel.ViewModelArduino");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "Unit", "CityManager.Models.Arduino");
-                xamlMember.Getter = get_0_ViewModelArduino_Unit;
-                xamlMember.Setter = set_0_ViewModelArduino_Unit;
+                xamlMember.Getter = get_1_ViewModelArduino_Unit;
+                xamlMember.Setter = set_1_ViewModelArduino_Unit;
                 break;
             case "CityManager.Viewmodel.ViewModel.Arduinos":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Viewmodel.ViewModel");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "Arduinos", "System.Collections.ObjectModel.ObservableCollection`1<CityManager.Models.Arduino>");
-                xamlMember.Getter = get_1_ViewModel_Arduinos;
-                xamlMember.Setter = set_1_ViewModel_Arduinos;
+                xamlMember.Getter = get_2_ViewModel_Arduinos;
+                xamlMember.Setter = set_2_ViewModel_Arduinos;
                 break;
             case "CityManager.Models.Arduino.Name":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.Arduino");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_2_Arduino_Name;
-                xamlMember.Setter = set_2_Arduino_Name;
+                xamlMember.Getter = get_3_Arduino_Name;
+                xamlMember.Setter = set_3_Arduino_Name;
                 break;
             case "CityManager.Models.Arduino.Ip":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.Arduino");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "Ip", "String");
-                xamlMember.Getter = get_3_Arduino_Ip;
-                xamlMember.Setter = set_3_Arduino_Ip;
+                xamlMember.Getter = get_4_Arduino_Ip;
+                xamlMember.Setter = set_4_Arduino_Ip;
                 break;
             case "CityManager.Models.Arduino.CoreMethods":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.Arduino");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "CoreMethods", "CityManager.Models.ArduinoMethod[]");
-                xamlMember.Getter = get_4_Arduino_CoreMethods;
-                xamlMember.Setter = set_4_Arduino_CoreMethods;
+                xamlMember.Getter = get_5_Arduino_CoreMethods;
+                xamlMember.Setter = set_5_Arduino_CoreMethods;
                 break;
             case "CityManager.Models.ArduinoMethod.Name":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.ArduinoMethod");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_5_ArduinoMethod_Name;
-                xamlMember.Setter = set_5_ArduinoMethod_Name;
+                xamlMember.Getter = get_6_ArduinoMethod_Name;
+                xamlMember.Setter = set_6_ArduinoMethod_Name;
                 break;
             case "CityManager.Models.ArduinoMethod.DefaultValue":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.ArduinoMethod");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "DefaultValue", "Int32");
-                xamlMember.Getter = get_6_ArduinoMethod_DefaultValue;
-                xamlMember.Setter = set_6_ArduinoMethod_DefaultValue;
+                xamlMember.Getter = get_7_ArduinoMethod_DefaultValue;
+                xamlMember.Setter = set_7_ArduinoMethod_DefaultValue;
                 break;
             case "CityManager.Models.ArduinoMethod.MinValue":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.ArduinoMethod");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "MinValue", "Int32");
-                xamlMember.Getter = get_7_ArduinoMethod_MinValue;
-                xamlMember.Setter = set_7_ArduinoMethod_MinValue;
+                xamlMember.Getter = get_8_ArduinoMethod_MinValue;
+                xamlMember.Setter = set_8_ArduinoMethod_MinValue;
                 break;
             case "CityManager.Models.ArduinoMethod.MaxValue":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.ArduinoMethod");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "MaxValue", "Int32");
-                xamlMember.Getter = get_8_ArduinoMethod_MaxValue;
-                xamlMember.Setter = set_8_ArduinoMethod_MaxValue;
+                xamlMember.Getter = get_9_ArduinoMethod_MaxValue;
+                xamlMember.Setter = set_9_ArduinoMethod_MaxValue;
                 break;
             case "CityManager.Models.ArduinoMethod.CurrentValue":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.ArduinoMethod");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "CurrentValue", "Int32");
-                xamlMember.Getter = get_9_ArduinoMethod_CurrentValue;
-                xamlMember.Setter = set_9_ArduinoMethod_CurrentValue;
+                xamlMember.Getter = get_10_ArduinoMethod_CurrentValue;
+                xamlMember.Setter = set_10_ArduinoMethod_CurrentValue;
                 break;
             case "CityManager.Models.ArduinoMethod.UnitName":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.ArduinoMethod");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "UnitName", "String");
-                xamlMember.Getter = get_10_ArduinoMethod_UnitName;
-                xamlMember.Setter = set_10_ArduinoMethod_UnitName;
+                xamlMember.Getter = get_11_ArduinoMethod_UnitName;
+                xamlMember.Setter = set_11_ArduinoMethod_UnitName;
                 break;
             case "CityManager.Models.ArduinoMethod.UnitCount":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.ArduinoMethod");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "UnitCount", "Int32");
-                xamlMember.Getter = get_11_ArduinoMethod_UnitCount;
-                xamlMember.Setter = set_11_ArduinoMethod_UnitCount;
+                xamlMember.Getter = get_12_ArduinoMethod_UnitCount;
+                xamlMember.Setter = set_12_ArduinoMethod_UnitCount;
                 break;
             case "CityManager.Models.Arduino.GroupMethods":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Models.Arduino");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "GroupMethods", "CityManager.Models.ArduinoMethod[]");
-                xamlMember.Getter = get_12_Arduino_GroupMethods;
-                xamlMember.Setter = set_12_Arduino_GroupMethods;
+                xamlMember.Getter = get_13_Arduino_GroupMethods;
+                xamlMember.Setter = set_13_Arduino_GroupMethods;
                 break;
             case "CityManager.Viewmodel.ViewModel.OnGridClickCommand":
                 userType = (global::CityManager.CityManager_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CityManager.Viewmodel.ViewModel");
                 xamlMember = new global::CityManager.CityManager_XamlTypeInfo.XamlMember(this, "OnGridClickCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_13_ViewModel_OnGridClickCommand;
-                xamlMember.Setter = set_13_ViewModel_OnGridClickCommand;
+                xamlMember.Getter = get_14_ViewModel_OnGridClickCommand;
+                xamlMember.Setter = set_14_ViewModel_OnGridClickCommand;
                 break;
             }
             return xamlMember;

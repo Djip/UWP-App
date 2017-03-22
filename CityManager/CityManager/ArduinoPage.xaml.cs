@@ -1,9 +1,11 @@
-﻿using CityManager.Models;
+﻿using CityManager.Common;
+using CityManager.Models;
 using CityManager.Viewmodel;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -27,6 +29,7 @@ namespace CityManager
         public ArduinoPage()
         {
             this.InitializeComponent();
+            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -86,14 +89,6 @@ namespace CityManager
             GenerateMethodControls();
         }
 
-        private TextBlock GenerateMethodLabel(string text)
-        {
-            TextBlock t = new TextBlock();
-            t.Text = text;
-            t.FontWeight = Windows.UI.Text.FontWeights.Bold;
-            return t;
-        }
-
         //adds whatever controls the arduino has
         private void GenerateMethodControls()
         {
@@ -101,7 +96,7 @@ namespace CityManager
             foreach (ArduinoMethod am in currentArduino.CoreMethods)
             {
                 StackBase.Children.Add(GenerateMethodLabel(am.Name));
-                StackBase.Children.Add(FindControlType(am.MinValue, am.MaxValue));
+                StackBase.Children.Add(FindControlType(am.MinValue, am.MaxValue, am.Name, 0, 0));
             }
 
             //add a new label so we can see what controls are core and groups
@@ -116,18 +111,30 @@ namespace CityManager
                 {
                     //there are no uniqe names for units in groups so we just call them unit + number
                     StackBase.Children.Add(new TextBlock() {Text = "Unit " + i });
-                    StackBase.Children.Add(FindControlType(am.MinValue, am.MaxValue));
+                    StackBase.Children.Add(FindControlType(am.MinValue, am.MaxValue, am.Name, 1, i));
+                    Debug.WriteLine("ADDED GROUP, TOTAL: " + i + " OF " + am.UnitCount);
                 }
             }
         }
 
+        private TextBlock GenerateMethodLabel(string text)
+        {
+            TextBlock t = new TextBlock();
+            t.Text = text;
+            t.FontWeight = Windows.UI.Text.FontWeights.Bold;
+            return t;
+        }
+
         //returns the appropriate control for the values given by the xml
-        private Control FindControlType(int min, int max)
+        private Control FindControlType(int min, int max, string methodName, int isGroup, int index)  //TODO pass id
         {
             if (min == 0 && max == 1)
             {
                 ToggleSwitch ts = new ToggleSwitch();
                 ts.Toggled += new RoutedEventHandler(ControlToggled);
+                ts.Name = methodName;
+                ts.Tag = isGroup + "," + index;
+                //Debug.WriteLine("NEW TAG" + ts.Tag);
 
                 return ts;
             }
@@ -145,12 +152,38 @@ namespace CityManager
 
         public void ControlToggled(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("TOGGLED: " + sender.GetHashCode());
+            ToggleSwitch current = (ToggleSwitch)sender;
+            string[] stag = current.Tag.ToString().Split(',');
+            int isGroup = int.Parse(stag[0]);
+            int n;
+            if (current.IsOn)
+            {
+                n = 1;
+            }
+            else
+            {
+                n = 0;
+            }
+
+            string s = "";
+            if (isGroup == 0)
+            {
+                s = currentArduino.Ip + "," + current.Name + "," + n.ToString() + "," + ",";
+            }
+            else
+            {
+                s = currentArduino.Ip + "," + current.Name + "," + n.ToString() + "," + currentArduino.GroupMethods[int.Parse(stag[1])].UnitName + "," + currentArduino.GroupMethods[int.Parse(stag[1])].UnitCount;
+            }
+
+            //string ex = "ip,methodName,newval,unitName,UnitCount";
+
+            Debug.WriteLine("TOGGLED: " + s);
         }
 
         public void ControlSliderChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
-            Debug.WriteLine("Slid: " + sender.GetHashCode());
+            Slider current = (Slider)sender;
+            Debug.WriteLine("Slid: " + sender.GetHashCode() + " : " + current.Value);
         }
 
         //allows os to go back to the main page

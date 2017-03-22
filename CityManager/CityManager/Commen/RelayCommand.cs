@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
+using Windows.UI.Xaml;
 
 namespace CityManager.Common
 {
@@ -10,6 +11,8 @@ namespace CityManager.Common
     {
         private readonly Action _execute;
         private readonly Func<bool> _canExecute;
+        private Action<object, RoutedEventArgs> controlToggled;
+        private Func<bool> p;
 
         /// <summary>
         /// Raised when RaiseCanExecuteChanged is called.
@@ -36,6 +39,12 @@ namespace CityManager.Common
                 throw new ArgumentNullException("execute");
             _execute = execute;
             _canExecute = canExecute;
+        }
+
+        public RelayCommand(Action<object, RoutedEventArgs> controlToggled, Func<bool> p)
+        {
+            this.controlToggled = controlToggled;
+            this.p = p;
         }
 
         /// <summary>
