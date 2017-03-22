@@ -31,17 +31,26 @@ namespace CityManager
 
         public MainPage()
         {
-            this.InitializeComponent();
+            this.InitializeComponent();    
         }
 
         private void GridViewItem_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            //ViewModel vm = (ViewModel)this.DataContext;
-            //vm.OnGridClickCommand.Execute(null);
-
             GridViewItem g = (GridViewItem)sender;
             //Debug.WriteLine("TAG: " + g.Tag);
             this.Frame.Navigate(typeof(ArduinoPage), g.Tag);
+        }
+
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //ViewModel vm = (ViewModel)this.DataContext;
+            //vm.OnGridClick();
+        }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            XMLmanager.Instance.CloseEvent();
+            Debug.WriteLine("MAIN PAGE UNLOADED!");
         }
     }
 }

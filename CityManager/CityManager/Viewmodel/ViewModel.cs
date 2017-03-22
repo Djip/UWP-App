@@ -1,5 +1,6 @@
 ﻿using CityManager.Common;
 using CityManager.Models;
+using GalaSoft.MvvmLight.Threading;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,13 +12,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Xml.Serialization;
+using Windows.System.Threading;
+using Windows.UI.Xaml;
 
 namespace CityManager.Viewmodel
 {
     public class ViewModel : INotifyPropertyChanged
     {
+
         public event PropertyChangedEventHandler PropertyChanged;
-        private ObservableCollection<Arduino> arduinos = new ObservableCollection<Arduino>();
+        public ObservableCollection<Arduino> arduinos = new ObservableCollection<Arduino>();
 
         public ObservableCollection<Arduino> Arduinos
         {
@@ -48,33 +52,36 @@ namespace CityManager.Viewmodel
         }
 
         public ViewModel() {
-            //DO NOT REMOVE!
-            OnGridClickCommand = new RelayCommand(OnGridClick, ()=>true);
+            OnGridClickCommand = new RelayCommand(OnGridClick, ()=>true);          
+            XMLmanager.Instance.SomethingHappened += modelchanged;
+            Debug.WriteLine("NEW VIEWMODEL!");
+            WebSocketManager WSM = new WebSocketManager();
+            WSM.InitWebSockets();
+            DispatcherHelper.Initialize();
+        }
+        delegate void Del();
 
-            //TODO make deserlize class/XMLmanager
-            string xml = "<ArduinoCollection><Arduinos><Arduino><name>Tog</name><ip>192.168.40.3</ip><core><ArduinoMethod><name>driveForward</name><default>0</default><minimum>0</minimum><maximum>30</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>driveBackwards</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>stopTrain</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>1</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod></core><group></group></Arduino><Arduino><name>Bil</name><ip>192.168.40.4</ip><core><ArduinoMethod><name>driveForward</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>driveBackwards</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>stopTrain</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>1</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod></core><group></group></Arduino><Arduino><name>Lyskryds</name><ip>192.168.40.5</ip><core><ArduinoMethod><name>turnOnLights</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>turnOffLights</name><default>1</default><minimum>0</minimum><maximum>1</maximum><current>1</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod><ArduinoMethod><name>emergencyLights</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName></unitName><unitCount>0</unitCount></ArduinoMethod></core><group><ArduinoMethod><name>turnOnlight</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName>lyskryds</unitName><unitCount>4</unitCount></ArduinoMethod><ArduinoMethod><name>turnOfflight</name><default>0</default><minimum>0</minimum><maximum>1</maximum><current>0</current><unitName>lyskryds</unitName><unitCount>4</unitCount></ArduinoMethod></group></Arduino></Arduinos></ArduinoCollection>";
-            //string xml = "<ArduinoCollection><Arduinos><Arduino><name>Tog</name><ip>192.168.40.3</ip></Arduino><Arduino><name>Bil</name><ip>192.168.40.4</ip></Arduino><Arduino><name>Lyskryds</name><ip>192.168.40.4</ip></Arduino></Arduinos></ArduinoCollection>";
+        private void modelchanged(object sender, EventArgs e)
+        {
+            DispatcherHelper.CheckBeginInvokeOnUI(
+                                                    () =>
+                                                    {
+                                                        test();
+                                                    });
+        }
+        private void test()
+        {
+            ArduinoCollection ac = XMLmanager.Instance.ArduinoCollection;          
+            Debug.WriteLine("test");
 
-            XmlSerializer serializer = new XmlSerializer(typeof(ArduinoCollection));
-            ArduinoCollection arduinoCollection = null;
-            using (StringReader stringReader = new StringReader(xml))
-            {
-                try
-                {
-                     arduinoCollection = (ArduinoCollection)serializer.Deserialize(stringReader);
-                
-                }
-                catch (Exception e)
-                {
-                    Debug.WriteLine(e.StackTrace);
-                }
-
-            }
-
-            foreach (var item in arduinoCollection.Arduinos)
-            {
-                Arduinos.Add(item);
-            }
+            //Debug.WriteLine("er der mange" + Arduinos.Count());
+            //foreach (Arduino item in ac.Arduinos)
+            //{
+            //    Arduinos.Add(item);
+            //    Debug.WriteLine("Er vi her? foreach");
+            //}
+            //Arduinos.Count();
+            Arduinos = new ObservableCollection<Arduino>(ac.Arduinos);
         }
 
         public void OnGridClick()

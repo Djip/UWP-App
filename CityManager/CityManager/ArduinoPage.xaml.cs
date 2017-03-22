@@ -1,6 +1,8 @@
 ﻿using CityManager.Models;
 using CityManager.Viewmodel;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
@@ -17,6 +19,7 @@ namespace CityManager
     {
         private string arduinoTag;
         private Arduino currentArduino = null;
+        private ViewModelArduino vma = null;
 
         public ArduinoPage()
         {
@@ -25,20 +28,27 @@ namespace CityManager
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            vma = new ViewModelArduino();
             //we use the arduinos ip as a uniqe id
             //we then send that id over to this page so we know what arduino we are working with
             arduinoTag = e.Parameter.ToString();
             GeneratePage();
+            
         }
 
         //generates the page based on the XML vars we have
         private void GeneratePage()
         {
-            ViewModel vm = new ViewModel();
-            ObservableCollection<Arduino> oc = vm.Arduinos;
+            //ViewModelArduino page = new ViewModelArduino();
+ 
+            Debug.WriteLine("arduinoTag " + arduinoTag);
 
-            //find our arduino useing the tag/ip we got from the previes page
-            foreach (Arduino a in oc)
+
+            //Debug.WriteLine("ARDUINO " + vm.Arduinos.Count);
+            //ObservableCollection<Arduino> oc = vm.Arduinos;
+
+            //Find our arduino useing the tag/ip we got from the previes page
+            foreach (Arduino a in XMLmanager.Instance.ArduinoCollection.Arduinos)
             {
                 if (a.Ip.Equals(arduinoTag))
                 {
@@ -46,7 +56,11 @@ namespace CityManager
 
                     if (a != null)
                     {
-                        GenerateNameTextbox(a); 
+                        GenerateNameTextbox(a);
+                    }
+                    else
+                    {
+                        Debug.WriteLine("NO ARDUINO");
                     }
                 }
             }
@@ -129,5 +143,7 @@ namespace CityManager
         {
             this.Frame.Navigate(typeof(MainPage));
         }
+
+        
     }
 }

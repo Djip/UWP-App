@@ -8,13 +8,13 @@
     xmlns:Models="using:CityManager.Models"
     xmlns:Viewmodel="using:CityManager.Viewmodel"
     x:Class="CityManager.MainPage"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Unloaded="Page_Unloaded">
     <Page.DataContext>
         <Viewmodel:ViewModel/>
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <GridView ItemsSource="{Binding Arduinos}" IsItemClickEnabled="True" SelectionMode="None">
+        <GridView ItemsSource="{Binding Arduinos}" IsItemClickEnabled="True" SelectionMode="None" ItemClick="GridView_ItemClick">
             <GridView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <ItemsWrapGrid Orientation="Horizontal" />
@@ -40,32 +40,6 @@
                     </GridViewItem>
                 </DataTemplate>
             </GridView.ItemTemplate>
-            <!--
-
-            <GridView.DataContext>
-                <Models:ObservableCollection/>
-            </GridView.DataContext>
-
-            <GridViewItem>
-                <TextBlock TextAlignment="Center" VerticalAlignment="Center">
-                    <Run Text="FUCKA UU"/>
-                </TextBlock>
-            </GridViewItem>
-            <GridViewItem>
-                <TextBlock TextAlignment="Center" VerticalAlignment="Center">
-                    <Run Text="FUCKA UU1"/>
-                </TextBlock>
-            </GridViewItem>
-            <GridViewItem>
-                <TextBlock TextAlignment="Center" VerticalAlignment="Center">
-                    <Run Text="FUCKA UU"/>
-                </TextBlock>
-            </GridViewItem>
-            <GridViewItem>
-                <TextBlock TextAlignment="Center" VerticalAlignment="Center">
-                    <Run Text="FUCKA UU"/>
-                </TextBlock>
-            </GridViewItem>-->
         </GridView>
     </Grid>
 </Page>
