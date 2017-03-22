@@ -1,10 +1,13 @@
 ﻿using CityManager.Models;
 using CityManager.Viewmodel;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 
@@ -124,6 +127,7 @@ namespace CityManager
             if (min == 0 && max == 1)
             {
                 ToggleSwitch ts = new ToggleSwitch();
+                ts.Toggled += new RoutedEventHandler(ControlToggled);
 
                 return ts;
             }
@@ -133,9 +137,20 @@ namespace CityManager
                 s.Minimum = min;
                 s.Maximum = max;
                 s.Orientation = Orientation.Horizontal;
+                s.ValueChanged += new RangeBaseValueChangedEventHandler(ControlSliderChanged);
 
                 return s;
             }
+        }
+
+        public void ControlToggled(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("TOGGLED: " + sender.GetHashCode());
+        }
+
+        public void ControlSliderChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            Debug.WriteLine("Slid: " + sender.GetHashCode());
         }
 
         //allows os to go back to the main page

@@ -655,3 +655,14 @@ C:\Users\Rene\Desktop\UWP-App\CityManager\CityManager\bin\x86\Debug\GalaSoft.Mvv
 C:\Users\Rene\Desktop\UWP-App\CityManager\CityManager\obj\x86\Debug\Microsoft.Practices.ServiceLocation\en-US\Microsoft.Practices.ServiceLocation.Properties.Resources.resw
 C:\Users\Rene\Desktop\UWP-App\CityManager\CityManager\obj\x86\Debug\CityManager.csproj.GenerateResource.Cache
 C:\Users\Rene\Desktop\UWP-App\CityManager\CityManager\obj\x86\Debug\GalaSoft.MvvmLight.Platform.pri.xml
+C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\GalaSoft.MvvmLight.Extras.dll
+C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\GalaSoft.MvvmLight.Extras.pdb
+C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\GalaSoft.MvvmLight.Platform.dll
+C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\GalaSoft.MvvmLight.Platform.pdb
+C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\GalaSoft.MvvmLight.dll
+C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\GalaSoft.MvvmLight.pdb
+C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\Microsoft.Practices.ServiceLocation\en-US\Microsoft.Practices.ServiceLocation.Properties.Resources.resw
+C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\CityManager.csproj.GenerateResource.Cache
+C:\git\UWP-App\CityManager\CityManager\obj\x86\Debug\GalaSoft.MvvmLight.Platform.pri.xml

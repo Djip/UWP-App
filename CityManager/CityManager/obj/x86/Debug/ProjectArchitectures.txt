@@ -1,1 +1,1 @@
-C:\Users\Rene\Desktop\UWP-App\CityManager\CityManager\CityManager.csproj;x86
+C:\git\UWP-App\CityManager\CityManager\CityManager.csproj;x86
