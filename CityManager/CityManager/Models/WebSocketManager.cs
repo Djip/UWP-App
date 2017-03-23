@@ -14,7 +14,22 @@ namespace CityManager.Models
     public class WebSocketManager
     {
         MessageWebSocket webSock = null;
+        private static WebSocketManager instance;
 
+
+        private WebSocketManager() { }
+
+        public static WebSocketManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new WebSocketManager();
+                }
+                return instance;
+            }
+        }
         public async void InitWebSockets()
         {
             /*MessageWebSocket*/ webSock = new MessageWebSocket();

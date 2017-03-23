@@ -55,8 +55,7 @@ namespace CityManager.Viewmodel
             OnGridClickCommand = new RelayCommand(OnGridClick, ()=>true);          
             XMLmanager.Instance.SomethingHappened += modelchanged;
             Debug.WriteLine("NEW VIEWMODEL!");
-            WebSocketManager WSM = new WebSocketManager();
-            WSM.InitWebSockets();
+            WebSocketManager.Instance.InitWebSockets();
             DispatcherHelper.Initialize();
         }
         delegate void Del();

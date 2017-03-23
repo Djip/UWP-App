@@ -178,8 +178,7 @@ namespace CityManager
             //string ex = "ip,methodName,newval,unitName,UnitCount";
 
             Debug.WriteLine("TOGGLED: " + s);
-            WebSocketManager wsm = new WebSocketManager();
-            wsm.SendMethodCall(s);
+            WebSocketManager.Instance.SendMethodCall(s);
         }
 
         public void ControlSliderChanged(object sender, RangeBaseValueChangedEventArgs e)

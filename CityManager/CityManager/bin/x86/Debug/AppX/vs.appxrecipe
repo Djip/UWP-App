@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-23T09:07:40.094</Modified>
+      <Modified>2017-03-23T10:21:57.212</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\CityManager.exe">
       <PackagePath>entrypoint\CityManager.exe</PackagePath>
-      <Modified>2017-03-23T09:07:39.612</Modified>
+      <Modified>2017-03-23T10:21:56.724</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mthy\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -561,7 +561,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\Core\CityManager.exe">
       <PackagePath>CityManager.exe</PackagePath>
-      <Modified>2017-03-23T09:07:40.088</Modified>
+      <Modified>2017-03-23T10:21:57.207</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
