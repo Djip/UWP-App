@@ -96,7 +96,7 @@ namespace CityManager
             foreach (ArduinoMethod am in currentArduino.CoreMethods)
             {
                 StackBase.Children.Add(GenerateMethodLabel(am.Name));
-                StackBase.Children.Add(FindControlType(am.MinValue, am.MaxValue, am.Name, 0, 0));
+                StackBase.Children.Add(FindControlType(am.MinValue, am.MaxValue, am.Name, 0, 0, ""));
             }
 
             //add a new label so we can see what controls are core and groups
@@ -107,12 +107,11 @@ namespace CityManager
             {
                 StackBase.Children.Add(GenerateMethodLabel(am.Name));
 
-                for (int i = 0; i < am.UnitCount; i++)
+                for (int i = 1; i <= am.UnitCount; i++)
                 {
                     //there are no uniqe names for units in groups so we just call them unit + number
                     StackBase.Children.Add(new TextBlock() {Text = "Unit " + i });
-                    StackBase.Children.Add(FindControlType(am.MinValue, am.MaxValue, am.Name, 1, i));
-                    Debug.WriteLine("ADDED GROUP, TOTAL: " + i + " OF " + am.UnitCount);
+                    StackBase.Children.Add(FindControlType(am.MinValue, am.MaxValue, am.Name, 1, i, am.UnitName));
                 }
             }
         }
@@ -126,15 +125,15 @@ namespace CityManager
         }
 
         //returns the appropriate control for the values given by the xml
-        private Control FindControlType(int min, int max, string methodName, int isGroup, int index)  //TODO pass id
+        private Control FindControlType(int min, int max, string methodName, int isGroup, int index, string unitName)
         {
             if (min == 0 && max == 1)
             {
                 ToggleSwitch ts = new ToggleSwitch();
                 ts.Toggled += new RoutedEventHandler(ControlToggled);
                 ts.Name = methodName;
-                ts.Tag = isGroup + "," + index;
-                //Debug.WriteLine("NEW TAG" + ts.Tag);
+                //just putting all the data we need in here
+                ts.Tag = isGroup + "," + index + "," + unitName;
 
                 return ts;
             }
@@ -153,6 +152,7 @@ namespace CityManager
         public void ControlToggled(object sender, RoutedEventArgs e)
         {
             ToggleSwitch current = (ToggleSwitch)sender;
+            //split the data we send erliere
             string[] stag = current.Tag.ToString().Split(',');
             int isGroup = int.Parse(stag[0]);
             int n;
@@ -166,18 +166,20 @@ namespace CityManager
             }
 
             string s = "";
-            if (isGroup == 0)
+            if (isGroup == 0)//Core
             {
-                s = currentArduino.Ip + "," + current.Name + "," + n.ToString() + "," + ",";
+                s = currentArduino.Ip + "," + current.Name + "," + n.ToString() + ",,";
             }
             else
             {
-                s = currentArduino.Ip + "," + current.Name + "," + n.ToString() + "," + currentArduino.GroupMethods[int.Parse(stag[1])].UnitName + "," + currentArduino.GroupMethods[int.Parse(stag[1])].UnitCount;
+                s = currentArduino.Ip + "," + current.Name + "," + n.ToString() + "," + stag[2] + "," + int.Parse(stag[1]); //currentArduino.GroupMethods[].UnitCount;
             }
 
             //string ex = "ip,methodName,newval,unitName,UnitCount";
 
             Debug.WriteLine("TOGGLED: " + s);
+            WebSocketManager wsm = new WebSocketManager();
+            wsm.SendMethodCall(s);
         }
 
         public void ControlSliderChanged(object sender, RangeBaseValueChangedEventArgs e)

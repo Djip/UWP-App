@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>0BEC0096EA6C80D5EC6CA44B0B25B4B5B9D89EF37AB7E180A20A4BEF328A13AC</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>28423D2C262D591B65DDAE49FC7AF330525D13B82E17DB9C23F612D46382EE89</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>45f59d07-b75b-4236-9774-c134fdc92fc9_1.0.0.0_x86__ct80bdfkjzz4w</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>45f59d07-b75b-4236-9774-c134fdc92fc9_ct80bdfkjzz4w!App</RegisteredUserModeAppID>
     <RegisteredPackageID>45f59d07-b75b-4236-9774-c134fdc92fc9</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-22T13:07:14.807</Modified>
+      <Modified>2017-03-23T09:07:40.094</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\CityManager.exe">
       <PackagePath>entrypoint\CityManager.exe</PackagePath>
-      <Modified>2017-03-22T13:07:14.313</Modified>
+      <Modified>2017-03-23T09:07:39.612</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\mthy\.nuget\packages\CommonServiceLocator\1.3.0\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
@@ -557,11 +557,11 @@
     <AppxPackagedFile Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-03-22T12:16:17.149</Modified>
+      <Modified>2017-03-23T08:24:31.023</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\git\UWP-App\CityManager\CityManager\bin\x86\Debug\Core\CityManager.exe">
       <PackagePath>CityManager.exe</PackagePath>
-      <Modified>2017-03-22T13:07:14.801</Modified>
+      <Modified>2017-03-23T09:07:40.088</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

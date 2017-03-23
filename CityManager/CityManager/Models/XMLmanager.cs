@@ -62,7 +62,10 @@ namespace CityManager.Models
         {
             ArduinoCollection = null;
             XmlSerializer serializer = new XmlSerializer(typeof(ArduinoCollection));
-            using (StringReader stringReader = new StringReader(xml))
+
+            
+
+            using (StringReader stringReader = new StringReader(xml.Trim('\n')))
             {
                 try
                 {

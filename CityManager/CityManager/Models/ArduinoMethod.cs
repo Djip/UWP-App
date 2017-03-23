@@ -11,13 +11,13 @@ namespace CityManager.Models
     {
         [XmlElement("name")]
         public string Name { get; set; }
-        [XmlElement("default")]
+        [XmlElement("defaultValue")]
         public int DefaultValue { get; set; }
-        [XmlElement("minimum")]
+        [XmlElement("minValue")]
         public int MinValue { get; set; }
-        [XmlElement("maximum")]
+        [XmlElement("maxValue")]
         public int MaxValue { get; set; }
-        [XmlElement("current")]
+        [XmlElement("currentValue")]
         public int CurrentValue { get; set; }
         [XmlElement("unitName")]
         public string UnitName { get; set; }
